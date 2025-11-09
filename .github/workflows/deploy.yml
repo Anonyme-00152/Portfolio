@@ -1,11 +1,14 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,8 +29,20 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Crée la branche gh-pages si elle n'existe pas
+          if ! git ls-remote --exit-code origin gh-pages; then
+            git checkout --orphan gh-pages
+            git rm -rf .
+            echo "Initial commit" > index.html
+            git add index.html
+            git commit -m "Initial gh-pages commit"
+            git push origin gh-pages
+            git checkout main
+          fi
+
+          # Déploie le dossier dist sur gh-pages
+          npx gh-pages -d dist -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
