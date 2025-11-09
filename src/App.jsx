@@ -15,7 +15,7 @@ import { GitHubActivity } from '@/components/GitHubActivity'
 import { TechStackVisualization } from '@/components/TechStackVisualization'
 import { CaseStudies } from '@/components/CaseStudies'
 import { Timeline } from '@/components/Timeline'
-import profileImage from './assets/mikail_lekesiz.png'
+const profileImage = '/ebubekir_arti.jpg'
 import './App.css'
 
 function App() {
@@ -99,30 +99,30 @@ function App() {
           document.body.removeChild(link)
         } else {
           // CV dosyası mevcut değil, email gönder
-          window.location.href = 'mailto:mikail@lekesiz.fr?subject=CV Request&body=Hello, I would like to request your CV.'
+          window.location.href = 'mailto:ebubekirarti@icloud.com?subject=CV Request&body=Hello, I would like to request your CV.'
         }
       })
       .catch(() => {
         // Hata durumunda email gönder
-        window.location.href = 'mailto:mikail@lekesiz.fr?subject=CV Request&body=Hello, I would like to request your CV.'
+        window.location.href = 'mailto:ebubekirarti@icloud.com?subject=CV Request&body=Hello, I would like to request your CV.'
       })
   }
 
   const skills = {
-    languages: ['JavaScript', 'TypeScript', 'Python', 'PHP', 'C#', 'Java'],
-    frontend: ['React', 'Vue.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'],
-    backend: ['Node.js', 'ASP.NET', 'Laravel', 'Symfony', 'Express'],
-    databases: ['MySQL', 'SQL Server', 'MongoDB', 'Oracle', 'PostgreSQL'],
-    devops: ['Docker', 'Kubernetes', 'CI/CD', 'AWS', 'Azure', 'Google Cloud'],
-    tools: ['Git', 'Jira', 'Confluence', 'Figma', 'VS Code']
+    languages: ['Python', 'HTML', 'HTML5', 'CSS', 'JavaScript', 'Bootstrap'],
+    frontend: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Frontend (IA)'],
+    backend: ['Python', 'Backend (IA)'],
+    databases: ['À définir'],
+    devops: ['Cybersécurité', 'IA pour l\'automatisation'],
+    tools: ['Git', 'IA pour la génération de contenu', 'Réparation de téléphone']
   }
 
   const socialLinks = [
-    { icon: Github, url: 'https://github.com/lekesiz', label: 'GitHub' },
-    { icon: Linkedin, url: 'https://www.linkedin.com/in/mikail-lekesiz/', label: 'LinkedIn' },
-    { icon: Twitter, url: 'https://x.com/lekesiz_mikail', label: 'Twitter' },
-    { icon: Instagram, url: 'https://www.instagram.com/lekesizmikail', label: 'Instagram' },
-    { icon: Youtube, url: 'https://www.youtube.com/@mlekesiz', label: 'YouTube' }
+    { icon: Github, url: 'https://github.com/Anonyme-00152', label: 'GitHub' },
+    { icon: Linkedin, url: '[À VENIR]', label: 'LinkedIn' },
+    { icon: Twitter, url: '[À VENIR]', label: 'Twitter' },
+    { icon: Instagram, url: '[À VENIR]', label: 'Instagram' },
+    { icon: Youtube, url: '[À VENIR]', label: 'YouTube' }
   ]
 
   return (
@@ -327,7 +327,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400 dark:from-gray-800 dark:to-gray-600 rounded-full blur-3xl opacity-30"></div>
                 <img
                   src={profileImage}
-                  alt="Mikail Lekesiz - DevOps Engineer & Full Stack Developer"
+                  alt="Ebubekir ARTI - DevOps Engineer & Full Stack Developer"
                   width="384"
                   height="384"
                   loading="lazy"
@@ -701,8 +701,8 @@ function App() {
                   <Mail className="mt-1 text-gray-600 dark:text-gray-400" size={20} />
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-500">{t.contact.email}</p>
-                    <a href="mailto:mikail@lekesiz.fr" className="text-gray-900 dark:text-white hover:underline">
-                      mikail@lekesiz.fr
+                    <a href="mailto:ebubekirarti@icloud.com" className="text-gray-900 dark:text-white hover:underline">
+                      ebubekirarti@icloud.com
                     </a>
                   </div>
                 </div>
@@ -804,10 +804,10 @@ function App() {
       <footer className="py-8 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
           <p>
-            © 2025 Mikail Lekesiz. {t.footer.rights}.
+            © 2025 Ebubekir ARTI. {t.footer.rights}.
           </p>
           <p className="mt-2 text-sm">
-            {t.footer.madeWith} ❤️ {t.footer.by} Mikail Lekesiz
+            {t.footer.madeWith} ❤️ {t.footer.by} Ebubekir ARTI
           </p>
         </div>
       </footer>
